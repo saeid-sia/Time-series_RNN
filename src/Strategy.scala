@@ -1,10 +1,7 @@
 
 object Strategy {
 
-  case class Person(
-                     firstName: Option[String],
-                     middleName: Option[String],
-                     lastName: Option[String])
+  case class Person(firstName: Option[String],middleName: Option[String],lastName: Option[String])
 
   def isFirstNameValid(person: Person) = person.firstName.isDefined
 

@@ -28,10 +28,10 @@ val port: Flag[Int] = flag("port", 8081, "TCP port")
 val Endpoints: Service[Request, Response] = (username :+: family ).toService
 	
 	
-	def main(): Unit = {
+def main(): Unit = {
     val server: ListeningServer = Http.server
-	  	.withStatsReceiver(statsReceiver)
-      .serve(s":${port()}", Endpoints)
+    .withStatsReceiver(statsReceiver)
+    .serve(s":${port()}", Endpoints)
 
     onExit { server.close() }
 
